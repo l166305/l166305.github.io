@@ -1,9 +1,234 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Ali haider CV</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">  </script>
+    <script>
+        //$(document).ready(function () { $("div#hiding").hide() })
+        $(document).ready(function () { $("div.verify").hide() })
+        $(document).ready(function () { $("div.rightedu1").hide() })
+
+        $(document).ready(function () { $("div.rightp").hide() })
+
+        $(document).ready(function () { $("div#projectinfo").hide() })
+        $(document).ready(function () { $("div.container1").hide() })
+        $(document).ready(function () { $("div#awards").hide() })
+        $(document).ready(function () { $("div#hobbies").hide() })
+
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $("div.rightedu1").slideToggle("slow");
+            });
+        });
+</script>
+
+    <script>
+        $(document).ready(function () {
+            $("#button2").click(function () {
+                $("div#projectinfo").fadeToggle("slow");
+            });
+        });
+</script>
+
+     <script>
+         $(document).ready(function () {
+             $("#button3").click(function () {
+                 $("div.container1").animate({ width: 'toggle', animationDuration: '6s' });
+             });
+         });
+</script>
+
+     <script>
+         $(document).ready(function () {
+             $("#hov").hover(function () {
+                 $("div.rightp").animate({ width: 'toggle', animationDuration: '6s' });
+             });
+         });
+</script>
+
+    <script>
+        var audio = $("audio#mysound");
+        $("button4").mouseenter(function () { audio.play() })
+
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#button4").click(function () {
+                $("div#awards").fadeToggle("slow")
+            })
+        });
+
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#button5").click(function () {
+                $("div#hobbies").fadeToggle("slow");
+            });
+        });
+
+        </script>
+    <script>
+        $(document).ready(function () {
+            $("button#postmess").click(function () {
+                $("div.verify").slideToggle("slow");
+            });
+        });
+
+        </script>
+
+
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+</script>
+
+    <script>
+
+        var z;
+        function submitfun() {
+            var x = document.getElementById("mySelect").value;
+
+
+
+            var y = document.getElementById("nametextbox").value;
+            
+            if (y.charCodeAt(0) >= 48 && y.charCodeAt(0) <= 57 || y=="") {
+                alert("Please enter correct name");
+                return false;
+            }
+
+
+            z = document.getElementById("messtext").value;
+            //$(span.popuptext).text(z)
+            if (z == "") {
+
+                alert("your message field is empty");
+                return false;
+            }
+
+            var str = "             Hello,";
+            str = str + " " + y + " from " + x + ".Welcome to Ali's profile";
+
+            //$("div#clock").text(str);
+            $("div.verify").empty();
+
+            $("div.verify").css({ "height": "40px" });
+            $("div.verify").text(str);
+            $(document).ready(function () { $("button#postmess").hide() })
+            alert("You can view the message by pressing the show message button");
+
+
+        }
+
+
+
+        function myFunctionx() {
+            $("span.popuptext").html(z);
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+
+
+
+
+
+        </script>
+
+
     <style>
 
+
+        .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+        #button1:hover {
+
+            
+        }
+
+        @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+      
         @keyframes imgor {
 
             from {
@@ -52,7 +277,8 @@
       
 
         body {
-           background-color:linen;
+           /*background-image:url("white-textured-wall-background-texture_1368-6402.jpg");*/
+           background-image:url("rEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png" )
 
         }
 
@@ -74,10 +300,14 @@
             flex:2;
         }
 
+
+       
+
 div
 {
     border-radius: 10px;
- }
+            height: 212px;
+        }
 
         temp {
             margin-left:30px;
@@ -91,6 +321,7 @@ div
    background-color:#668284;
     width: 100%;
     height: auto;
+            margin-top: 0px;
         }
 #name1
 {
@@ -98,8 +329,8 @@ div
 	font-size: 40px;
 	font-family: Verdana, sans-serif;
 	color:white;
-     width: auto;
-            height: auto;
+     width: 1275px;
+            height: 104px;
         }
 
         #projectfont {
@@ -127,6 +358,9 @@ div
 
         }
 
+        #sepe {
+            background-image:url("rEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png" )
+        }
 #personalinfo
 {
   margin-left: 50px;
@@ -142,7 +376,8 @@ div
 			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
-		}
+            height: 176px;
+        }
 
 		#education td, #education th {
 			border: 1px solid #ddd;
@@ -376,37 +611,88 @@ td
 
         </style>
 </head>
-<body>
-   
-    <div id="header1">
-   <p id="name1">
-   ALI HAIDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="29572393_2068003263239920_3627030988348378672_n.jpg" style="height: 132px; width: 165px; border-radius:20px; margin-top: 11px; float:right " />
-    </p>
-   
-   <p id="birthcity">
-   25th February,1998&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <strong> E-mail:</strong>
-     <a href="mailto:l166305@lhr.nu.edu.pk" target="_blank">
+<body onload="startTime()">
+  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button  id="postmess" style="border: thin solid black; animation-name:invi; animation-delay:4s; animation-duration:4s; animation-iteration-count:infinite; border-radius:25px; background-color:limegreen; color:white; font-weight:bold; font-size:20px;width:202px; padding-bottom:10px; padding-top:10px; height: 41px;">
+
+
+
+        Post message</button>
+      
+      <div class="verify" style="text-align:center;color:black;font-family:Cambria;font-weight:bold; height: 120px;">
+       <div id="nana">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Name:    <input id="nametextbox"type="text" name="user" placeholder="Enter Name" style="width: 140px; height: 20px;border-width:medium ;border-radius:10px;border-color:black"/><br />
+&nbsp;Country:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <select id="mySelect" style="text-align:center;color:black;font-family:Cambria;font-weight:bold; height: 38px;border-radius:10px;border-color:black;border-style:solid">
+  <option value="India">India</option>
+  <option value="Pakistan">Pakistan</option>
+  <option value="England">England</option>
+  <option value="Canada">Canada</option>
+</select>
+           <br />
+           &nbsp;&nbsp;&nbsp;&nbsp; Message: <input type="text" id="messtext" name="user" placeholder="Enter message" style="width: 140px; height: 22px; border-width:medium;border-radius:10px;border-color:black;border-style:solid"/>
+
+         <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <button id="Button6" style="background-color:limegreen ;font-weight:bold;border-radius:10px;border-color:black;border-style:solid" onclick="submitfun()">
+        Submit</button>
+
+            </div>
+         
+
+       </div>
+    
+    <div id="clock" style="background-color:limegreen;border-color:darkgreen;border-style:solid;padding-top:5px;font-family:Arial;font-weight:bold;color:whitesmoke;font-style:italic; height: 28px;margin-bottom:0px" >
+      <button class="popup" onclick="myFunctionx()" style="border-radius:10px;border-color:green;background-color:limegreen;border-width:medium"><strong>Show Message</strong>
+  <span class="popuptext" id="myPopup">    </span>
+   </button>
+        
+          <div id="txt" style="float:right;margin-right:10px;color:black;">
+
+        </div>
+        </div>
+    
+    <div id="header1" style="margin-top:0px;padding-top:5px;background-color:#E3EDD8;color:black;border-color:black;border-width:medium;border-style:solid;font-family:Cambria" >
+   <p id="name1" style="color:black">
+   &nbsp;&nbsp; ALI HAIDER<img src="29572393_2068003263239920_3627030988348378672_n.jpg" style="float:right;border-style:solid; height: 142px;border-color:limegreen; margin-left: 17px;border-radius:30px;border-width:2px; width: 179px;" /> </p>
+        <p style="color:black;font-family:Cambria;font-weight:bold;font-style:italic; width: 136px; margin-left: 45px;border-style:solid;border-color:limegreen">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contact info:&nbsp;</p>
+        <p id="birthcity" style="width: 447px;color:black;border-color:limegreen;border-width:medium;border-style:solid">
+   &nbsp; &nbsp; <strong>DOB:</strong>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 25th February,1998&nbsp;&nbsp;<br>
+           &nbsp;&nbsp; <strong> E-mail:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:l166305@lhr.nu.edu.pk" target="_blank">
          
    l166305@lhr.nu.edu.pk</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <br>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong> Phone</strong>: 0335-1475782
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Address: </strong>
-       C-642 Said Mitha,Lahore
-     
-     </p>
-   </div>
-     <div class="rightp">
-         
-         <p id="personalinfo" style="padding-top:20px;">
-    <strong>    <i> I am a hardworking and ambitious Computer Science Student looking for a job  that will allow me to use my analytical, technical and good communication skills for a cause that is beneficial and rewarding for both, the organization and me. 
-</i></strong></p>
-         </div>
-<p style="font-size:20px ; font-family:Arial ;font-weight:bold">
-   <u style="animation-name:slidein; animation-duration:6s; animation-iteration-count:1 ;animation-delay:4s"> Educational Information:</u>
+       &nbsp;&nbsp;&nbsp;<strong>Phone</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0335-1475782<br>
+        <strong>&nbsp;&nbsp;&nbsp;Address:&nbsp;&nbsp; </strong>C-642 Said Mitha,Lahore
 
-    <div class="rightedu" style="padding-top:20px">
+        </p>
+        
+   </div>
+    <button id="hov" style="background-color:limegreen;font-weight:bold;border-radius:10px;border-color:black;width:115px; height: 29px;">
+        hover me
+        </button>
+
+     
+     <div class="rightp" style="border-style:solid;border-width:thin">
+         
+
+         <p id="personalinfo" style="padding-top:20px; font-family:Cambria;text-align:center">
+    <strong>     I am a hardworking and ambitious Computer Science Student looking for a job  that will allow me to use my analytical, technical and good communication skills for a cause that is beneficial and rewarding for both, the organization and me. 
+</strong></p>
+         </div>
+
+    
+
+<p style="font-size:20px ; font-family:Arial ;font-weight:bold;position:relative;display:flexbox;flex-pack:center;flex-align:center;flex-item-align:center;flex-line-pack:center">
+    
+ 
+    
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    
+ 
+    
+   <button id="button1" style="animation-name:shake; animation-duration:6s; animation-iteration-count:infinite;border-color:black;border-radius:25px;border-width:thin;background-color:limegreen;color:white;font-weight:bold;font-size:20px;width:auto;padding-bottom:10px;padding-top:10px;border-style:solid">Education&nbsp;&nbsp; <img src="graduation-hat-and-diploma_318-58740.jpg" style="height: 31px; width: 41px;border-radius:15px" />  </button>
+    </p>
+    
+    <div class="rightedu1" style="padding-top:20px;border-style:solid;border-width:thin " >
         
         <table id="education">
                 <tr id="heading" style="font-size:18px">
@@ -436,14 +722,15 @@ td
                
             </table>
         </div>
-
+    
 
     <p style="font-size:20px ; font-family:Arial ;font-weight:bold">
-      <u style="animation-name:invi ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite">  Projects: </u>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      <button id="button2" style="animation-name:invi ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite;border-color:black;border-style:solid;border-radius:25px;border-width:thin;background-color:limegreen;color:white;font-weight:bold;font-size:20px;width:auto;padding-bottom:10px;padding-top:10px">Projects<img src="black-and-white-desk-png-fearsome-office-work-clipart-black-and-white-image-ideas-truism-interior-design-gt-wins-taxslayer-bowl-1200.png" style="height: 31px; width: 41px;border-radius:15px" /></button>
         </p>
 
 
-    <div id="projectinfo" >
+    <div id="projectinfo" style="border-style:solid;border-width:thin " >
        
 
       <ul style="font-family:Arial ;font-size:16px">
@@ -454,41 +741,43 @@ td
     
       <li>Brick Breaker Game &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Assembly Language)</li></ul></div>
          <p style="font-size:20px; font-family:Arial;font-weight:bold; width: 1051px;">
-      <u>  Skills:&nbsp;&nbsp;</u>&nbsp;&nbsp;
-             <img class="auto-style14" src="index.jpg" style="animation-name:imgor ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite" /><img class="auto-style15" src="images.jpg" style="animation-name:imgor2 ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite" /></p>
+      &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button id="button3" style="animation-name:shake; animation-duration:6s; animation-iteration-count:infinite;border-color:black;border-style:solid;border-radius:25px;border-width:thin;background-color:limegreen;color:white;font-weight:bold;font-size:20px;width:auto;padding-bottom:10px;padding-top:10px">Skills&nbsp;&nbsp;        <img class="auto-style14" src="index.jpg" style="animation-name:imgor ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite;width:41px;height:31px;border-radius:15px" /><img class="auto-style15" src="images.jpg" style="animation-name:imgor2 ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite;border-radius:15px" />  </button>
+             
+             </p>
  
-    <div class="container1" style="font-family:Arial ; font-size:16px ;background-color: #668284;">
+    <div class="container1" style="font-family:Arial ; font-size:16px ;background-color: #668284; border-style:solid;border-width:thin ">
 
-        <div1 class="box1" >
+        <div class="box1" >
             <h4> Technical Skills </h4>
         &nbsp;&nbsp;
         Languages:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c,&nbsp; c++,&nbsp; c#,&nbsp; Assembly,&nbsp; javascript,&nbsp; SQL<br />
 &nbsp;&nbsp; Web Programming:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Html&nbsp; , CSS,&nbsp; asp.net<br />
-&nbsp;&nbsp; Operating systems:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Windows,&nbsp; Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</div1>
+            &nbsp;&nbsp; Operating systems:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Windows,&nbsp; Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-        <div1 class="box2">
+        
             <h4> Other Skills </h4>
-      <ul> <li>Good Analytical, Critical thinking, Problem solving and debugging skills. </li>
+      <ul> <li>Good analytical, Critical thinking, Problem solving and debugging skills. </li>
             <li>Commuicational Skills.   </li>
-
-
           </ul>
-            </div1>
+        </div>
+            
         </div>
     
 
     <p style="font-size:20px ; font-family:Arial ;font-weight:bold">
-      <u>Awards and Achievements: </u>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+       <button id="button4" style="animation-name:invi ;animation-delay:4s;animation-duration:4s ;animation-iteration-count:infinite;border-color:black;border-style:solid;border-radius:25px;border-width:thin;background-color:limegreen;color:white;font-weight:bold;font-size:20px;width:auto;padding-bottom:10px;padding-top:10px">Awards <img src="index.png" style="height:31px; width: 41px;border-radius:15px" /></button>
+      
         &nbsp;
 
-     <audio controls>
-  <source src="horse.ogg" type="audio/ogg">  
-  <source src="horse.mp3" type="audio/mpeg">      <!--taken from w3school-->
+     <audio id="mysound" >
+  <source src="horse.ogg" type="audio/ogg"/>  
+  <source src="horse.mp3" type="audio/mpeg"/>       <!--taken from w3school-->
 Your browser does not support the audio element.
 </audio>
     </p>
 
-    <div id="awards">
+    <div id="awards" style="border-style:solid;border-width:thin ">
         <ul style="font-size:16px; font-family:Arial;list-style-type:square">
             <li>Dean's List Award.
                 </li>
@@ -511,11 +800,13 @@ Your browser does not support the audio element.
         </div>
 
      <p style="font-size:20px ; font-family:Arial ;font-weight:bold">
-      <u>Hobbies and Interests: </u>&nbsp <img src="hobby.jpg" style="height: 31px; width: 41px" />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      <button id="button5" style="animation-name:shake; animation-duration:6s; animation-iteration-count:infinite;border-color:black;border-style:solid;border-radius:25px;border-width:thin;background-color:limegreen;color:white;font-weight:bold;font-size:20px;width:auto;padding-bottom:10px;padding-top:10px">Hobbies&nbsp;&nbsp; <img src="hobby.jpg" style="height: 31px; width: 41px;border-radius:15px" />  </button>
+   
 
 
         </p>
-    <div id="hobbies">
+    <div id="hobbies" style="border-style:solid;border-width:thin ">
     
 
 
@@ -537,11 +828,16 @@ Your browser does not support the audio element.
         </div>
 
 
-    
+ <br> <br> &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp 
+  
+
+
+
+   
 
         
-
-
+        
+    
 
         
  
